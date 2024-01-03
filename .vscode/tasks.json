@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "LedBlinkingApp_build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/LedBlinkingApp/LedBlinkingApp.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "LedBlinkingApp_publish",
+            "command": "dotnet publish ${workspaceFolder}/LedBlinkingApp -r linux-arm64 -o ${workspaceFolder}/LedBlinkingApp/bin/arm",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "LedBlinkingApp_build"
+        },
+        {
+            "label": "LedBlinkingApp_deploy",
+            "command": "scp -r ${workspaceFolder}/LedBlinkingApp/bin/arm/* woselko@192.168.0.87:/home/woselko/LedBlinkingApp/",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "LedBlinkingApp_publish"
+        },
+        {
+            "label": "DHT11SensorApp_build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/DHT11SensorApp/DHT11SensorApp.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "DHT11SensorApp_publish",
+            "command": "dotnet publish ${workspaceFolder}/DHT11SensorApp -r linux-arm64 -o ${workspaceFolder}/DHT11SensorApp/bin/arm",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "DHT11SensorApp_build"
+        },
+        {
+            "label": "DHT11SensorApp_deploy",
+            "command": "scp -r ${workspaceFolder}/DHT11SensorApp/bin/arm/* woselko@192.168.0.87:/home/woselko/DHT11SensorApp/",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "DHT11SensorApp_publish"
+        }
+    ]
+}

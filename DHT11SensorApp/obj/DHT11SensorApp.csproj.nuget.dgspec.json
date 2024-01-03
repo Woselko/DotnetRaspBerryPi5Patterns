@@ -1,0 +1,86 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/woselko/DotnetRaspBerryPi5Patterns/DHT11SensorApp/DHT11SensorApp.csproj": {}
+  },
+  "projects": {
+    "/home/woselko/DotnetRaspBerryPi5Patterns/DHT11SensorApp/DHT11SensorApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/woselko/DotnetRaspBerryPi5Patterns/DHT11SensorApp/DHT11SensorApp.csproj",
+        "projectName": "DHT11SensorApp",
+        "projectPath": "/home/woselko/DotnetRaspBerryPi5Patterns/DHT11SensorApp/DHT11SensorApp.csproj",
+        "packagesPath": "/home/woselko/.nuget/packages/",
+        "outputPath": "/home/woselko/DotnetRaspBerryPi5Patterns/DHT11SensorApp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/woselko/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Iot.Device.Bindings": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "System.Device.Gpio": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.linux-arm64",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.linux-arm64",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/woselko/.dotnet/sdk/7.0.404/RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-arm64": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

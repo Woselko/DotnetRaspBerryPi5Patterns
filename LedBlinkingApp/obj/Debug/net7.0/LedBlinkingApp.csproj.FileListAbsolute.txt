@@ -1,0 +1,14 @@
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/bin/Debug/net7.0/LedBlinkingApp
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/bin/Debug/net7.0/LedBlinkingApp.deps.json
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/bin/Debug/net7.0/LedBlinkingApp.runtimeconfig.json
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/bin/Debug/net7.0/LedBlinkingApp.dll
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/bin/Debug/net7.0/LedBlinkingApp.pdb
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/obj/Debug/net7.0/LedBlinkingApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/obj/Debug/net7.0/LedBlinkingApp.AssemblyInfoInputs.cache
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/obj/Debug/net7.0/LedBlinkingApp.AssemblyInfo.cs
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/obj/Debug/net7.0/LedBlinkingApp.csproj.CoreCompileInputs.cache
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/obj/Debug/net7.0/LedBlinkingApp.dll
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/obj/Debug/net7.0/refint/LedBlinkingApp.dll
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/obj/Debug/net7.0/LedBlinkingApp.pdb
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/obj/Debug/net7.0/LedBlinkingApp.genruntimeconfig.cache
+/home/woselko/DotnetRaspBerryPi5Patterns/LedBlinkingApp/obj/Debug/net7.0/ref/LedBlinkingApp.dll
