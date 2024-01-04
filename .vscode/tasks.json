@@ -54,6 +54,32 @@
             "dependsOn": "DHT11SensorApp_publish"
         },
         {
+            "label": "DHT22SensorApp_build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/DHT22SensorApp/DHT22SensorApp.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "DHT22SensorApp_publish",
+            "command": "dotnet publish ${workspaceFolder}/DHT22SensorApp -r linux-arm64 -o ${workspaceFolder}/DHT22SensorApp/bin/arm",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "DHT22SensorApp_build"
+        },
+        {
+            "label": "DHT22SensorApp_deploy",
+            "command": "scp -r ${workspaceFolder}/DHT22SensorApp/bin/arm/* woselko@192.168.0.87:/home/woselko/DHT22SensorApp/",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "DHT22SensorApp_publish"
+        },
+        {
             "label": "SensorMotionApp_build",
             "command": "dotnet",
             "type": "process",

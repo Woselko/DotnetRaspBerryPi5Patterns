@@ -54,6 +54,32 @@
             }
         },
         {
+            "preLaunchTask": "DHT22SensorApp_deploy",
+            "name": "DHT22SensorApp Launch (remote)",
+            "type": "coreclr",
+            "request": "launch",
+
+            "program": "/home/woselko/.dotnet/dotnet",
+            "args": [
+                "/home/woselko/DHT22SensorApp/DHT22SensorApp.dll"
+            ],
+
+            "cwd": "/home/woselko/DHT22SensorApp",
+            "console": "integratedTerminal",
+            "externalConsole": false,
+            "internalConsoleOptions": "openOnFirstSessionStart",
+            "stopAtEntry": false,
+
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "ssh",
+                "pipeArgs": [
+                    "woselko@192.168.0.87"
+                ],
+                "debuggerPath": "/home/woselko/vsdbg/vsdbg"
+            }
+        },
+        {
             "preLaunchTask": "SensorMotionApp_deploy",
             "name": "SensorMotionApp Launch (remote)",
             "type": "coreclr",
