@@ -53,5 +53,31 @@
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
         },
+        {
+            "preLaunchTask": "SensorMotionApp_deploy",
+            "name": "SensorMotionApp Launch (remote)",
+            "type": "coreclr",
+            "request": "launch",
+
+            "program": "/home/woselko/.dotnet/dotnet",
+            "args": [
+                "/home/woselko/SensorMotionApp/SensorMotionApp.dll"
+            ],
+
+            "cwd": "/home/woselko/SensorMotionApp",
+            "console": "integratedTerminal",
+            "externalConsole": false,
+            "internalConsoleOptions": "openOnFirstSessionStart",
+            "stopAtEntry": false,
+
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "ssh",
+                "pipeArgs": [
+                    "woselko@192.168.0.87"
+                ],
+                "debuggerPath": "/home/woselko/vsdbg/vsdbg"
+            }
+        },
     ]
 }

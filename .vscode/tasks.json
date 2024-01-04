@@ -52,6 +52,32 @@
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "DHT11SensorApp_publish"
+        },
+        {
+            "label": "SensorMotionApp_build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/SensorMotionApp/SensorMotionApp.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "SensorMotionApp_publish",
+            "command": "dotnet publish ${workspaceFolder}/SensorMotionApp -r linux-arm64 -o ${workspaceFolder}/SensorMotionApp/bin/arm",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "SensorMotionApp_build"
+        },
+        {
+            "label": "SensorMotionApp_deploy",
+            "command": "scp -r ${workspaceFolder}/SensorMotionApp/bin/arm/* woselko@192.168.0.87:/home/woselko/SensorMotionApp/",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "SensorMotionApp_publish"
         }
     ]
 }

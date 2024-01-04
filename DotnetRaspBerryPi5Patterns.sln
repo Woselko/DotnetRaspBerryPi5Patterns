@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LedBlinkingApp", "LedBlinki
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DHT11SensorApp", "DHT11SensorApp\DHT11SensorApp.csproj", "{B27B457F-EABF-47E4-9F53-9A0B4E8D2D4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorMotionApp", "SensorMotionApp\SensorMotionApp.csproj", "{ED549D8F-53DE-43F4-84A2-3889E74C9856}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{B27B457F-EABF-47E4-9F53-9A0B4E8D2D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B27B457F-EABF-47E4-9F53-9A0B4E8D2D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B27B457F-EABF-47E4-9F53-9A0B4E8D2D4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED549D8F-53DE-43F4-84A2-3889E74C9856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED549D8F-53DE-43F4-84A2-3889E74C9856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED549D8F-53DE-43F4-84A2-3889E74C9856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED549D8F-53DE-43F4-84A2-3889E74C9856}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
