@@ -105,5 +105,57 @@
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
         },
+        {
+            "preLaunchTask": "SecureCameraApp_deploy",
+            "name": "SecureCameraApp Launch (remote)",
+            "type": "coreclr",
+            "request": "launch",
+
+            "program": "/home/woselko/.dotnet/dotnet",
+            "args": [
+                "/home/woselko/SecureCameraApp/SecureCameraApp.dll"
+            ],
+
+            "cwd": "/home/woselko/SecureCameraApp",
+            "console": "integratedTerminal",
+            "externalConsole": false,
+            "internalConsoleOptions": "openOnFirstSessionStart",
+            "stopAtEntry": false,
+
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "ssh",
+                "pipeArgs": [
+                    "woselko@192.168.0.87"
+                ],
+                "debuggerPath": "/home/woselko/vsdbg/vsdbg"
+            }
+        },
+        {
+            "preLaunchTask": "PlayGroundApp_deploy",
+            "name": "PlayGroundApp Launch (remote)",
+            "type": "coreclr",
+            "request": "launch",
+
+            "program": "/home/woselko/.dotnet/dotnet",
+            "args": [
+                "/home/woselko/PlayGroundApp/PlayGroundApp.dll"
+            ],
+
+            "cwd": "/home/woselko/PlayGroundApp",
+            "console": "integratedTerminal",
+            "externalConsole": false,
+            "internalConsoleOptions": "openOnFirstSessionStart",
+            "stopAtEntry": false,
+
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "ssh",
+                "pipeArgs": [
+                    "woselko@192.168.0.87"
+                ],
+                "debuggerPath": "/home/woselko/vsdbg/vsdbg"
+            }
+        },
     ]
 }

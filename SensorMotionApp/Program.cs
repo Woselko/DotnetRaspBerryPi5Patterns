@@ -1,6 +1,6 @@
 ﻿using System.Device.Gpio;
 
-const int LED_PIN = 17;
+const int LED_PIN = 27;
 const int PIR_PIN = 23;
 const int BUZZ_PIN = 24;
 
@@ -13,6 +13,8 @@ controller.Write(LED_PIN, PinValue.Low);
 controller.RegisterCallbackForPinValueChangedEvent(PIR_PIN, PinEventTypes.Rising, (sender, args)=>{
     controller.Write(LED_PIN, PinValue.High);
     controller.Write(BUZZ_PIN, PinValue.High);
+    controller.Write(LED_PIN, PinValue.Low);
+
     System.Console.WriteLine("Led is ON");
 });
 

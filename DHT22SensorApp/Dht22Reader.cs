@@ -15,7 +15,7 @@ public class Dht22Reader
     {
         DhtPin = pinDht;
         gpio = new GpioController();
-        gpio.OpenPin(DhtPin, PinMode.Output);
+        gpio.OpenPin(DhtPin);
     }
     
     public (double humidity, double temperature)? ReadDht22()

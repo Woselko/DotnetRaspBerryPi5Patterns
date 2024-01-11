@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorMotionApp", "SensorMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DHT22SensorApp", "DHT22SensorApp\DHT22SensorApp.csproj", "{0E871D12-CC8C-46CB-96C7-3A2CBCC625A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureCameraApp", "SecureCameraApp\SecureCameraApp.csproj", "{CC5D73CF-71C1-4A61-B381-833FED742873}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayGroundApp", "PlayGroundApp\PlayGroundApp.csproj", "{4BA1C08B-C298-4631-B771-CBC9338AC91B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,13 @@ Global
 		{0E871D12-CC8C-46CB-96C7-3A2CBCC625A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E871D12-CC8C-46CB-96C7-3A2CBCC625A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E871D12-CC8C-46CB-96C7-3A2CBCC625A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC5D73CF-71C1-4A61-B381-833FED742873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC5D73CF-71C1-4A61-B381-833FED742873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC5D73CF-71C1-4A61-B381-833FED742873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC5D73CF-71C1-4A61-B381-833FED742873}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA1C08B-C298-4631-B771-CBC9338AC91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA1C08B-C298-4631-B771-CBC9338AC91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA1C08B-C298-4631-B771-CBC9338AC91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA1C08B-C298-4631-B771-CBC9338AC91B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

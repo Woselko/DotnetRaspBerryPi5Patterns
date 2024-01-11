@@ -104,6 +104,58 @@
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "SensorMotionApp_publish"
+        },
+        {
+            "label": "SecureCameraApp_build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/SecureCameraApp/SecureCameraApp.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "SecureCameraApp_publish",
+            "command": "dotnet publish ${workspaceFolder}/SecureCameraApp -r linux-arm64 -o ${workspaceFolder}/SecureCameraApp/bin/arm",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "SecureCameraApp_build"
+        },
+        {
+            "label": "SecureCameraApp_deploy",
+            "command": "scp -r ${workspaceFolder}/SecureCameraApp/bin/arm/* woselko@192.168.0.87:/home/woselko/SecureCameraApp/",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "SecureCameraApp_publish"
+        },
+        {
+            "label": "PlayGroundApp_build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/PlayGroundApp/PlayGroundApp.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "PlayGroundApp_publish",
+            "command": "dotnet publish ${workspaceFolder}/PlayGroundApp -r linux-arm64 -o ${workspaceFolder}/PlayGroundApp/bin/arm",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "PlayGroundApp_build"
+        },
+        {
+            "label": "PlayGroundApp_deploy",
+            "command": "scp -r ${workspaceFolder}/PlayGroundApp/bin/arm/* woselko@192.168.0.87:/home/woselko/PlayGroundApp/",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "PlayGroundApp_publish"
         }
     ]
 }
