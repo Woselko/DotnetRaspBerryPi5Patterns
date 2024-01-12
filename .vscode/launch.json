@@ -157,5 +157,31 @@
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
         },
+        {
+            "preLaunchTask": "I2C_LCD1602App_deploy",
+            "name": "I2C_LCD1602App Launch (remote)",
+            "type": "coreclr",
+            "request": "launch",
+
+            "program": "/home/woselko/.dotnet/dotnet",
+            "args": [
+                "/home/woselko/I2C_LCD1602App/I2C_LCD1602App.dll"
+            ],
+
+            "cwd": "/home/woselko/I2C_LCD1602App",
+            "console": "integratedTerminal",
+            "externalConsole": false,
+            "internalConsoleOptions": "openOnFirstSessionStart",
+            "stopAtEntry": false,
+
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "ssh",
+                "pipeArgs": [
+                    "woselko@192.168.0.87"
+                ],
+                "debuggerPath": "/home/woselko/vsdbg/vsdbg"
+            }
+        },
     ]
 }

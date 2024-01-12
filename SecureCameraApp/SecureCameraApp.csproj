@@ -7,14 +7,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
     <ItemGroup>
-        <!-- <PackageReference Include="SixLabors.ImageSharp" Version="3.1.2" />
-        <PackageReference Include="Unosquare.Raspberry.IO" Version="0.27.1" />
-        <PackageReference Include="Unosquare.WiringPi" Version="0.5.1" /> -->
-        <PackageReference Include="SebastianGuzmanMorla.LibCamera" Version="1.0.2" />
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-      <!-- <PackageReference Include="MMALSharp" Version="0.6.0" />
-      <PackageReference Include="MMALSharp.FFmpeg" Version="0.6.0" /> -->
-      <!-- <PackageReference Include="Iot.Device.Bindings" Version="3.1.0" /> -->
-
+      <PackageReference Include="SebastianGuzmanMorla.LibCamera" Version="1.0.2" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 </Project>

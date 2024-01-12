@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureCameraApp", "SecureCa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayGroundApp", "PlayGroundApp\PlayGroundApp.csproj", "{4BA1C08B-C298-4631-B771-CBC9338AC91B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I2C_LCD1602App", "I2C_LCD1602App\I2C_LCD1602App.csproj", "{828C133A-5F1C-4C0F-A9DC-5A4483723750}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{4BA1C08B-C298-4631-B771-CBC9338AC91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BA1C08B-C298-4631-B771-CBC9338AC91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BA1C08B-C298-4631-B771-CBC9338AC91B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{828C133A-5F1C-4C0F-A9DC-5A4483723750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{828C133A-5F1C-4C0F-A9DC-5A4483723750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{828C133A-5F1C-4C0F-A9DC-5A4483723750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{828C133A-5F1C-4C0F-A9DC-5A4483723750}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

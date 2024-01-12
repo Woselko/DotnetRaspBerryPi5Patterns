@@ -156,6 +156,32 @@
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "PlayGroundApp_publish"
+        },
+        {
+            "label": "I2C_LCD1602App_build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/I2C_LCD1602App/I2C_LCD1602App.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "I2C_LCD1602App_publish",
+            "command": "dotnet publish ${workspaceFolder}/I2C_LCD1602App -r linux-arm64 -o ${workspaceFolder}/I2C_LCD1602App/bin/arm",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "I2C_LCD1602App_build"
+        },
+        {
+            "label": "I2C_LCD1602App_deploy",
+            "command": "scp -r ${workspaceFolder}/I2C_LCD1602App/bin/arm/* woselko@192.168.0.87:/home/woselko/I2C_LCD1602App/",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "I2C_LCD1602App_publish"
         }
     ]
 }
