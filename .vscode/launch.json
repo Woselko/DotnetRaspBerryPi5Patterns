@@ -22,7 +22,7 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.0.87"
+                    "woselko@192.168.1.13"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -48,7 +48,7 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.0.87"
+                    "woselko@192.168.1.13"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -74,7 +74,7 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.0.87"
+                    "woselko@192.168.1.13"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -100,7 +100,7 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.0.87"
+                    "woselko@192.168.1.13"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -126,7 +126,7 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.0.87"
+                    "woselko@192.168.1.13"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -152,7 +152,33 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.0.87"
+                    "woselko@192.168.1.13"
+                ],
+                "debuggerPath": "/home/woselko/vsdbg/vsdbg"
+            }
+        },
+        {
+            "preLaunchTask": "CameraStreamServer_deploy",
+            "name": "CameraStreamServer Launch (remote)",
+            "type": "coreclr",
+            "request": "launch",
+
+            "program": "/home/woselko/.dotnet/dotnet",
+            "args": [
+                "/home/woselko/CameraStreamServer/CameraStreamServer.dll"
+            ],
+
+            "cwd": "/home/woselko/CameraStreamServer",
+            "console": "integratedTerminal",
+            "externalConsole": false,
+            "internalConsoleOptions": "openOnFirstSessionStart",
+            "stopAtEntry": false,
+
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "ssh",
+                "pipeArgs": [
+                    "woselko@192.168.1.13"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -178,7 +204,33 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.0.87"
+                    "woselko@192.168.1.13"
+                ],
+                "debuggerPath": "/home/woselko/vsdbg/vsdbg"
+            }
+        },
+        {
+            "preLaunchTask": "RaspCameraLibrary_deploy",
+            "name": "RaspCameraLibrary Launch (remote)",
+            "type": "coreclr",
+            "request": "launch",
+
+            "program": "/home/woselko/.dotnet/dotnet",
+            "args": [
+                "/home/woselko/RaspCameraLibrary/RaspCameraLibrary.dll"
+            ],
+
+            "cwd": "/home/woselko/RaspCameraLibrary",
+            "console": "integratedTerminal",
+            "externalConsole": false,
+            "internalConsoleOptions": "openOnFirstSessionStart",
+            "stopAtEntry": false,
+
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "ssh",
+                "pipeArgs": [
+                    "woselko@192.168.1.13"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
