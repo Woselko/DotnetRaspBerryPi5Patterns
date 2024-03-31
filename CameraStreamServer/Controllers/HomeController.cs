@@ -38,7 +38,8 @@ public class HomeController : Controller
         HttpContext.Response.Headers.Add("CacheControl", "no-cache");
 
         //List<Camera>? Cameras = RaspCameraLibrary.Video.ListCameras().Result;
-        //var mode = Cameras.FirstOrDefault(c => c.Id == 0).Modes.FirstOrDefault();
+        //var modes = Cameras.FirstOrDefault(c => c.Id == 0).Modes;
+        //var mode = Cameras.FirstOrDefault(c => c.Id == 0).Modes[3];
 
         var cancellationTokenSource = new CancellationTokenSource();
         // VideoSettings Settings = new H264()
@@ -59,14 +60,17 @@ public class HomeController : Controller
         VideoSettings Settings = new Mjpeg()
         {
             Camera = 0,
-            Width = 800,
-            Height = 600,
+            //Width = 720,
+            //Height = 480,
+            Width = 1280,
+            Height = 720,
             Timeout = 0,
             Flush = true,
             HFlip = true,
             VFlip = true,
-            Framerate = 4,
-            WhiteBalance = WhiteBalance.Incandescent,
+            Framerate = 10,
+            //Mode= mode,
+            //WhiteBalance = WhiteBalance.Incandescent,
             Output = "/dev/stdout"
         };
 
@@ -112,7 +116,8 @@ public class HomeController : Controller
         try
         {
             await HttpContext.Response.BodyWriter.WriteAsync(CreateHeader(imageData.Length));
-            await HttpContext.Response.BodyWriter.WriteAsync(imageData.AsMemory().Slice(0, imageData.Length));
+            //await HttpContext.Response.BodyWriter.WriteAsync(imageData.AsMemory().Slice(0, imageData.Length));
+            await HttpContext.Response.BodyWriter.WriteAsync(imageData);
             await HttpContext.Response.BodyWriter.WriteAsync(CreateFooter());
         }
         catch (ObjectDisposedException)
