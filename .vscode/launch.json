@@ -173,7 +173,8 @@
             "externalConsole": false,
             "internalConsoleOptions": "openOnFirstSessionStart",
             "stopAtEntry": false,
-
+            
+            "justMyCode": false,
             "pipeTransport": {
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",

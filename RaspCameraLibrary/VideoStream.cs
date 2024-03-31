@@ -53,8 +53,9 @@ public class VideoStream : Hello
         processStartInfo.Arguments = args;
         using Process captureStreamProcess = new Process
         {
-            StartInfo = processStartInfo
+            StartInfo = processStartInfo,
         };
+        //captureStreamProcess.PriorityBoostEnabled = true; //low performance
         captureStreamProcess.ErrorDataReceived += ProcessDataReceived;
         captureStreamProcess.Start();
         captureStreamProcess.BeginErrorReadLine();
@@ -62,12 +63,13 @@ public class VideoStream : Hello
         using (var frameOutputStream = captureStreamProcess.StandardOutput.BaseStream)
         {
             //var index = 0;
-            var buffer = new byte[32768];
+            //var buffer = new byte[16384];
+            //var buffer = new byte[32768];
             //var buffer = new byte[1024];
-            //var buffer = new byte[65536];131,072
+            var buffer = new byte[65536];
             //var buffer = new byte[131072];
             var imageData = new List<byte>();
-            byte[] imageHeader = null;
+            //byte[] imageHeader = null;
 
             while (!cancellationToken.IsCancellationRequested)
             {
@@ -84,30 +86,30 @@ public class VideoStream : Hello
                     break;
                 }
                 //Set Image Header with first data
-                if (imageHeader == null)
-                {
-                    imageHeader = buffer.Take(5).ToArray();
-                }
+                // if (imageHeader == null)
+                // {
+                //     imageHeader = buffer.Take(5).ToArray();
+                // }
 
                 // if (buffer.Take(5).SequenceEqual(imageHeader))
                 // {
-                //     if (imageData.Count > 0)
-                //     {
-                        this.NewImageReceived?.Invoke(imageData.ToArray());
-                        imageData.Clear();
-                        //index++;
-                //     }
+                imageData.AddRange(buffer.Take(length));
+                if (imageData.Count > 0)
+                {
+                   //this.NewImageReceived?.Invoke(buffer);
+                   this.NewImageReceived?.Invoke(imageData.ToArray());
+                   imageData.Clear();
+                   //index++;
+                }
                 // }
 
-                imageData.AddRange(buffer.Take(length));
+                //imageData.AddRange(buffer.Take(length));
             }
 
             frameOutputStream.Close();
         }
         captureStreamProcess.ErrorDataReceived -= this.ProcessDataReceived;
-
         captureStreamProcess.WaitForExit(1000);
-
         if (!captureStreamProcess.HasExited)
         {
             captureStreamProcess.Kill();
@@ -116,7 +118,7 @@ public class VideoStream : Hello
 
     private void ProcessDataReceived(object sender, DataReceivedEventArgs e)
     {
-        this.VideoInfoReceived?.Invoke(e.Data);
+        //this.VideoInfoReceived?.Invoke(e.Data);
         Console.WriteLine(e.Data);
     }
 
