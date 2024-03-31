@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayGroundApp", "PlayGround
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I2C_LCD1602App", "I2C_LCD1602App\I2C_LCD1602App.csproj", "{828C133A-5F1C-4C0F-A9DC-5A4483723750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspCameraLibrary", "RaspCameraLibrary\RaspCameraLibrary.csproj", "{00503C76-CDCE-4D47-8FFE-0D9CFB5D18E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaspCameraLibrary", "RaspCameraLibrary\RaspCameraLibrary.csproj", "{00503C76-CDCE-4D47-8FFE-0D9CFB5D18E0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CameraStreamServer", "CameraStreamServer\CameraStreamServer.csproj", "{8A12F9B2-8D65-4D14-8B60-66144B792DE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorStreamServer", "BlazorStreamServer\BlazorStreamServer.csproj", "{98674C1B-B627-4AF4-8527-AF2A1B8B3AAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{8A12F9B2-8D65-4D14-8B60-66144B792DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A12F9B2-8D65-4D14-8B60-66144B792DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A12F9B2-8D65-4D14-8B60-66144B792DE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98674C1B-B627-4AF4-8527-AF2A1B8B3AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98674C1B-B627-4AF4-8527-AF2A1B8B3AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98674C1B-B627-4AF4-8527-AF2A1B8B3AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98674C1B-B627-4AF4-8527-AF2A1B8B3AAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
