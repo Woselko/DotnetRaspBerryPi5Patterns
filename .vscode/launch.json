@@ -22,7 +22,7 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.1.13"
+                    "woselko@192.168.0.87"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -48,7 +48,7 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.1.13"
+                    "woselko@192.168.0.87"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -74,7 +74,7 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.1.13"
+                    "woselko@192.168.0.87"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -100,7 +100,7 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.1.13"
+                    "woselko@192.168.0.87"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -126,7 +126,7 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.1.13"
+                    "woselko@192.168.0.87"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -152,7 +152,7 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.1.13"
+                    "woselko@192.168.0.87"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -179,7 +179,7 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.1.13"
+                    "woselko@192.168.0.87"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -205,7 +205,7 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.1.13"
+                    "woselko@192.168.0.87"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
@@ -231,10 +231,10 @@
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "ssh",
                 "pipeArgs": [
-                    "woselko@192.168.1.13"
+                    "woselko@192.168.0.87"
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
-        },
+        }
     ]
 }

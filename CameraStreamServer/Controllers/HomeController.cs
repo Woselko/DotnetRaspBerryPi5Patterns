@@ -42,26 +42,10 @@ public class HomeController : Controller
         //var mode = Cameras.FirstOrDefault(c => c.Id == 0).Modes[3];
 
         var cancellationTokenSource = new CancellationTokenSource();
-        // VideoSettings Settings = new H264()
-        // {
-        //     Camera = 0,
-        //     Width = 640,
-        //     Height = 480,
-        //     Timeout = 0,
-        //     HFlip = true,
-        //     VFlip = true,
-        //     Framerate = 4,
-        //     WhiteBalance = WhiteBalance.Incandescent,
-        //     //Mode = mode,
-        //     //Output = "/home/woselko/CameraStreamServer" //This line is important to pipe the output
-        //     //Output = "/home/woselko/test.avi"
-        //     Output = "/dev/stdout"
-        // };
+
         VideoSettings Settings = new Mjpeg()
         {
             Camera = 0,
-            //Width = 720,
-            //Height = 480,
             Width = 1280,
             Height = 720,
             Timeout = 0,
@@ -70,7 +54,7 @@ public class HomeController : Controller
             VFlip = true,
             Framerate = 10,
             //Mode= mode,
-            //WhiteBalance = WhiteBalance.Incandescent,
+            WhiteBalance = WhiteBalance.Incandescent,
             Output = "/dev/stdout"
         };
 
@@ -116,7 +100,6 @@ public class HomeController : Controller
         try
         {
             await HttpContext.Response.BodyWriter.WriteAsync(CreateHeader(imageData.Length));
-            //await HttpContext.Response.BodyWriter.WriteAsync(imageData.AsMemory().Slice(0, imageData.Length));
             await HttpContext.Response.BodyWriter.WriteAsync(imageData);
             await HttpContext.Response.BodyWriter.WriteAsync(CreateFooter());
         }

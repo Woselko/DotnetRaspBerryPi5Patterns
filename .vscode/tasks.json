@@ -22,7 +22,7 @@
         },
         {
             "label": "LedBlinkingApp_deploy",
-            "command": "scp -r ${workspaceFolder}/LedBlinkingApp/bin/arm/* woselko@192.168.1.13:/home/woselko/LedBlinkingApp/",
+            "command": "scp -r ${workspaceFolder}/LedBlinkingApp/bin/arm/* woselko@192.168.0.87:/home/woselko/LedBlinkingApp/",
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "LedBlinkingApp_publish"
@@ -48,7 +48,7 @@
         },
         {
             "label": "DHT11SensorApp_deploy",
-            "command": "scp -r ${workspaceFolder}/DHT11SensorApp/bin/arm/* woselko@192.168.1.13:/home/woselko/DHT11SensorApp/",
+            "command": "scp -r ${workspaceFolder}/DHT11SensorApp/bin/arm/* woselko@192.168.0.87:/home/woselko/DHT11SensorApp/",
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "DHT11SensorApp_publish"
@@ -74,7 +74,7 @@
         },
         {
             "label": "DHT22SensorApp_deploy",
-            "command": "scp -r ${workspaceFolder}/DHT22SensorApp/bin/arm/* woselko@192.168.1.13:/home/woselko/DHT22SensorApp/",
+            "command": "scp -r ${workspaceFolder}/DHT22SensorApp/bin/arm/* woselko@192.168.0.87:/home/woselko/DHT22SensorApp/",
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "DHT22SensorApp_publish"
@@ -100,7 +100,7 @@
         },
         {
             "label": "SensorMotionApp_deploy",
-            "command": "scp -r ${workspaceFolder}/SensorMotionApp/bin/arm/* woselko@192.168.1.13:/home/woselko/SensorMotionApp/",
+            "command": "scp -r ${workspaceFolder}/SensorMotionApp/bin/arm/* woselko@192.168.0.87:/home/woselko/SensorMotionApp/",
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "SensorMotionApp_publish"
@@ -126,7 +126,7 @@
         },
         {
             "label": "SecureCameraApp_deploy",
-            "command": "scp -r ${workspaceFolder}/SecureCameraApp/bin/arm/* woselko@192.168.1.13:/home/woselko/SecureCameraApp/",
+            "command": "scp -r ${workspaceFolder}/SecureCameraApp/bin/arm/* woselko@192.168.0.87:/home/woselko/SecureCameraApp/",
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "SecureCameraApp_publish"
@@ -152,7 +152,7 @@
         },
         {
             "label": "PlayGroundApp_deploy",
-            "command": "scp -r ${workspaceFolder}/PlayGroundApp/bin/arm/* woselko@192.168.1.13:/home/woselko/PlayGroundApp/",
+            "command": "scp -r ${workspaceFolder}/PlayGroundApp/bin/arm/* woselko@192.168.0.87:/home/woselko/PlayGroundApp/",
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "PlayGroundApp_publish"
@@ -178,7 +178,7 @@
         },
         {
             "label": "I2C_LCD1602App_deploy",
-            "command": "scp -r ${workspaceFolder}/I2C_LCD1602App/bin/arm/* woselko@192.168.1.13:/home/woselko/I2C_LCD1602App/",
+            "command": "scp -r ${workspaceFolder}/I2C_LCD1602App/bin/arm/* woselko@192.168.0.87:/home/woselko/I2C_LCD1602App/",
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "I2C_LCD1602App_publish"
@@ -204,7 +204,7 @@
         },
         {
             "label": "CameraStreamServer_deploy",
-            "command": "scp -r ${workspaceFolder}/CameraStreamServer/bin/arm/* woselko@192.168.1.13:/home/woselko/CameraStreamServer/",
+            "command": "scp -r ${workspaceFolder}/CameraStreamServer/bin/arm/* woselko@192.168.0.87:/home/woselko/CameraStreamServer/",
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "CameraStreamServer_publish"
@@ -230,7 +230,7 @@
         },
         {
             "label": "RaspCameraLibrary_deploy",
-            "command": "scp -r ${workspaceFolder}/RaspCameraLibrary/bin/arm/* woselko@192.168.1.13:/home/woselko/RaspCameraLibrary/",
+            "command": "scp -r ${workspaceFolder}/RaspCameraLibrary/bin/arm/* woselko@192.168.0.87:/home/woselko/RaspCameraLibrary/",
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "RaspCameraLibrary_publish"

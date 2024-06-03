@@ -55,21 +55,14 @@ public class VideoStream : Hello
         {
             StartInfo = processStartInfo,
         };
-        //captureStreamProcess.PriorityBoostEnabled = true; //low performance
         captureStreamProcess.ErrorDataReceived += ProcessDataReceived;
         captureStreamProcess.Start();
         captureStreamProcess.BeginErrorReadLine();
 
         using (var frameOutputStream = captureStreamProcess.StandardOutput.BaseStream)
         {
-            //var index = 0;
-            //var buffer = new byte[16384];
-            //var buffer = new byte[32768];
-            //var buffer = new byte[1024];
             var buffer = new byte[65536];
-            //var buffer = new byte[131072];
             var imageData = new List<byte>();
-            //byte[] imageHeader = null;
 
             while (!cancellationToken.IsCancellationRequested)
             {
@@ -78,32 +71,20 @@ public class VideoStream : Hello
                     break;
                 }
                 
-                //var length = await frameOutputStream.ReadAsync(buffer);
                 var length = await frameOutputStream.ReadAsync(buffer, 0, buffer.Length);
 
                 if (length == 0)
                 {
                     break;
                 }
-                //Set Image Header with first data
-                // if (imageHeader == null)
-                // {
-                //     imageHeader = buffer.Take(5).ToArray();
-                // }
 
-                // if (buffer.Take(5).SequenceEqual(imageHeader))
-                // {
                 imageData.AddRange(buffer.Take(length));
                 if (imageData.Count > 0)
                 {
-                   //this.NewImageReceived?.Invoke(buffer);
-                   this.NewImageReceived?.Invoke(imageData.ToArray());
+                    SendExtractedJPEGFrames(imageData.ToArray());
+                   //this.NewImageReceived?.Invoke(imageData.ToArray());
                    imageData.Clear();
-                   //index++;
                 }
-                // }
-
-                //imageData.AddRange(buffer.Take(length));
             }
 
             frameOutputStream.Close();
@@ -118,8 +99,71 @@ public class VideoStream : Hello
 
     private void ProcessDataReceived(object sender, DataReceivedEventArgs e)
     {
-        //this.VideoInfoReceived?.Invoke(e.Data);
         Console.WriteLine(e.Data);
+    }
+
+    public void SendExtractedJPEGFrames(byte[] videoBytes)
+    {
+        int frameStartIndex = -1;
+        for (int i = 0; i < videoBytes.Length - 1; i++)
+        {
+            if (videoBytes[i] == 0xFF && videoBytes[i + 1] == 0xD8)
+            {
+                if (frameStartIndex != -1)
+                {
+                    //if frame started, add it to list
+                    byte[] frame = new byte[i - frameStartIndex];
+                    Array.Copy(videoBytes, frameStartIndex, frame, 0, i - frameStartIndex);
+                    this.NewImageReceived?.Invoke(frame);
+                }
+                // start new frame
+                frameStartIndex = i;
+            }
+            else if (videoBytes[i] == 0xFF && videoBytes[i + 1] == 0xD9)
+            {
+                // end of frame found
+                if (frameStartIndex != -1)
+                {
+                    byte[] frame = new byte[i - frameStartIndex + 2];
+                    Array.Copy(videoBytes, frameStartIndex, frame, 0, i - frameStartIndex + 2);
+                    this.NewImageReceived?.Invoke(frame);
+                    frameStartIndex = -1;
+                }
+            }
+        }
+    }
+
+    public List<byte[]> ExtractJPEGFrames(byte[] videoBytes)
+    {
+        List<byte[]> frames = new List<byte[]>();
+        int frameStartIndex = -1;
+        for (int i = 0; i < videoBytes.Length - 1; i++)
+        {
+            if (videoBytes[i] == 0xFF && videoBytes[i + 1] == 0xD8)
+            {
+                if (frameStartIndex != -1)
+                {
+                    //if frame started, add it to list
+                    byte[] frame = new byte[i - frameStartIndex];
+                    Array.Copy(videoBytes, frameStartIndex, frame, 0, i - frameStartIndex);
+                    frames.Add(frame);
+                }
+                // start new frame
+                frameStartIndex = i;
+            }
+            else if (videoBytes[i] == 0xFF && videoBytes[i + 1] == 0xD9)
+            {
+                // end of frame found
+                if (frameStartIndex != -1)
+                {
+                    byte[] frame = new byte[i - frameStartIndex + 2];
+                    Array.Copy(videoBytes, frameStartIndex, frame, 0, i - frameStartIndex + 2);
+                    frames.Add(frame);
+                    frameStartIndex = -1;
+                }
+            }
+        }
+        return frames;
     }
 
 }
