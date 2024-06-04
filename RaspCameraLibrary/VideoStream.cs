@@ -25,6 +25,9 @@ public class VideoStream : Hello
     /// </summary>
     public event Action<string> VideoInfoReceived;
 
+    /// <summary>
+    /// New VideoStream instance
+    /// </summary>
     private static VideoStream Instance { get; } = new VideoStream();
 
     /// <summary>
@@ -36,6 +39,11 @@ public class VideoStream : Hello
     /// List cameras
     /// </summary>
     public static new async Task<List<Camera>?> ListCameras() => await Instance.List();
+
+    /// <summary>
+    /// Actual process running libcamera-vid
+    /// </summary>
+    public static Process CaptureStreamProcess { get; set; }
 
     /// <summary>
     /// Start Frame reader
@@ -51,22 +59,22 @@ public class VideoStream : Hello
         var args = processStartInfo.Arguments;
         args += " --libav-format mjpeg";
         processStartInfo.Arguments = args;
-        using Process captureStreamProcess = new Process
+        CaptureStreamProcess = new Process
         {
             StartInfo = processStartInfo,
         };
-        captureStreamProcess.ErrorDataReceived += ProcessDataReceived;
-        captureStreamProcess.Start();
-        captureStreamProcess.BeginErrorReadLine();
+        CaptureStreamProcess.ErrorDataReceived += ProcessDataReceived;
+        CaptureStreamProcess.Start();
+        CaptureStreamProcess.BeginErrorReadLine();
 
-        using (var frameOutputStream = captureStreamProcess.StandardOutput.BaseStream)
+        using (var frameOutputStream = CaptureStreamProcess.StandardOutput.BaseStream)
         {
             var buffer = new byte[65536];
             var imageData = new List<byte>();
 
             while (!cancellationToken.IsCancellationRequested)
             {
-                if(captureStreamProcess.HasExited)
+                if(CaptureStreamProcess.HasExited)
                 {
                     break;
                 }
@@ -89,11 +97,11 @@ public class VideoStream : Hello
 
             frameOutputStream.Close();
         }
-        captureStreamProcess.ErrorDataReceived -= this.ProcessDataReceived;
-        captureStreamProcess.WaitForExit(1000);
-        if (!captureStreamProcess.HasExited)
+        CaptureStreamProcess.ErrorDataReceived -= this.ProcessDataReceived;
+        CaptureStreamProcess.WaitForExit(1000);
+        if (!CaptureStreamProcess.HasExited)
         {
-            captureStreamProcess.Kill();
+            CaptureStreamProcess.Kill();
         }
     }
 
