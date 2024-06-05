@@ -105,6 +105,37 @@ public class VideoStream : Hello
         }
     }
 
+    /// <summary>
+    /// Start Frame reader
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    /// <param name="useShellExecute">Use the Operating System shell to start the process</param>
+    /// <returns></returns>
+    public async Task StartVideoStream(
+        ProcessStartInfo processStartInfo,
+        CancellationToken cancellationToken = default,
+        bool useShellExecute = false)
+    {
+        var args = processStartInfo.Arguments;
+        args += " --libav-format mjpeg";
+        processStartInfo.Arguments = args;
+        CaptureStreamProcess = new Process
+        {
+            StartInfo = processStartInfo,
+        };
+        CaptureStreamProcess.ErrorDataReceived += ProcessDataReceived;
+        CaptureStreamProcess.Start();
+        CaptureStreamProcess.BeginErrorReadLine();
+    }
+
+    public async Task StopVideoStream()
+    {
+        if (CaptureStreamProcess != null && !CaptureStreamProcess.HasExited)
+        {
+            CaptureStreamProcess.Kill();
+        }
+    }
+
     private void ProcessDataReceived(object sender, DataReceivedEventArgs e)
     {
         Console.WriteLine(e.Data);
