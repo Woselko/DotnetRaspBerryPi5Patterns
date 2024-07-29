@@ -260,6 +260,32 @@
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "MQ9GasSensorApp_publish"
+        },
+        {
+            "label": "VideoObjectDetection_build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/VideoObjectDetection/VideoObjectDetection.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "VideoObjectDetection_publish",
+            "command": "dotnet publish ${workspaceFolder}/VideoObjectDetection -r linux-arm64 -o ${workspaceFolder}/VideoObjectDetection/bin/arm",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "VideoObjectDetection_build"
+        },
+        {
+            "label": "VideoObjectDetection_deploy",
+            "command": "scp -r ${workspaceFolder}/VideoObjectDetection/bin/arm/* woselko@192.168.0.87:/home/woselko/VideoObjectDetection/",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "VideoObjectDetection_publish"
         }
     ]
 }
