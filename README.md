@@ -19,6 +19,12 @@ DHT11 and DHT22 is same electronic schema, but code is different, DHT22 is more 
 ## LedBlinkingApp
 ![image](https://github.com/Woselko/DotnetRaspBerryPi5Patterns/assets/76818798/47bf6908-9ceb-4b94-818b-7464a80ad216)
 
+## LCD App
+![LCD](https://github.com/user-attachments/assets/77d68354-f6d7-47f6-b1ef-630cdc010200)
+
+## MQ-9 With output to digital converter ADC0834
+![MQ-9](https://github.com/user-attachments/assets/3ab69fc5-d8ab-4242-8598-20a6dfa985a1)
+
 ## SensorMotionApp
 ![image](https://github.com/Woselko/DotnetRaspBerryPi5Patterns/assets/76818798/191d7af1-34e1-41d1-9ef3-787eb687eed9)
 
