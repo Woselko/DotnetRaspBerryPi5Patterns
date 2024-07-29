@@ -235,6 +235,32 @@
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
+        },
+        {
+            "preLaunchTask": "MQ9GasSensorApp_deploy",
+            "name": "MQ9GasSensorApp Launch (remote)",
+            "type": "coreclr",
+            "request": "launch",
+
+            "program": "/home/woselko/.dotnet/dotnet",
+            "args": [
+                "/home/woselko/MQ9GasSensorApp/MQ9GasSensorApp.dll"
+            ],
+
+            "cwd": "/home/woselko/MQ9GasSensorApp",
+            "console": "integratedTerminal",
+            "externalConsole": false,
+            "internalConsoleOptions": "openOnFirstSessionStart",
+            "stopAtEntry": false,
+
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "ssh",
+                "pipeArgs": [
+                    "woselko@192.168.0.87"
+                ],
+                "debuggerPath": "/home/woselko/vsdbg/vsdbg"
+            }
         }
     ]
 }

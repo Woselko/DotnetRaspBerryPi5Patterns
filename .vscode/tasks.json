@@ -234,6 +234,32 @@
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "RaspCameraLibrary_publish"
+        },
+        {
+            "label": "MQ9GasSensorApp_build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/MQ9GasSensorApp/MQ9GasSensorApp.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "MQ9GasSensorApp_publish",
+            "command": "dotnet publish ${workspaceFolder}/MQ9GasSensorApp -r linux-arm64 -o ${workspaceFolder}/MQ9GasSensorApp/bin/arm",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "MQ9GasSensorApp_build"
+        },
+        {
+            "label": "MQ9GasSensorApp_deploy",
+            "command": "scp -r ${workspaceFolder}/MQ9GasSensorApp/bin/arm/* woselko@192.168.0.87:/home/woselko/MQ9GasSensorApp/",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "MQ9GasSensorApp_publish"
         }
     ]
 }
