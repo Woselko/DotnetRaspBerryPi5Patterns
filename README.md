@@ -28,6 +28,9 @@ DHT11 and DHT22 is same electronic schema, but code is different, DHT22 is more 
 ## SensorMotionApp
 ![image](https://github.com/Woselko/DotnetRaspBerryPi5Patterns/assets/76818798/191d7af1-34e1-41d1-9ef3-787eb687eed9)
 
+## RfidReaderApp
+![image](https://github.com/user-attachments/assets/c1a9ad40-1248-4e4f-905e-09f11c72bf92)
+
 ## RaspCameraLibrary
 C# libcamera wrapper for streaming video
 ![image](https://github.com/Woselko/DotnetRaspBerryPi5Patterns/assets/76818798/b1ac49b8-3bea-42a5-a59f-94d75ba2cc0f)
@@ -35,10 +38,13 @@ C# libcamera wrapper for streaming video
 ## CameraStreamServer
 ![videoserver](https://github.com/Woselko/DotnetRaspBerryPi5Patterns/assets/76818798/1a02c442-28a1-47d3-b594-b2f454bfab21)
 
+## C# EMGU.Cv VideoObjectDetection app film/stream detection
+![image](https://github.com/user-attachments/assets/2e38728b-1a7f-4271-b68d-c8c594091be2)
+
+## Python Camera Live Stream Detection with TensorFlow Lite (coming soon)
+
 ## CameraCaptureOnMotionDetectionApp (coming soon)
 
 ## AspOnRaspbian - full nginx configuration (coming soon)
 
-## Net Maui Blazor (Android and Windows app) integration with Raspberry Pi 5 server (coming soon)
 
-## AI Camera detection (coming soon)
