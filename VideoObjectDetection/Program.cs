@@ -1,4 +1,4 @@
-﻿using Emgu.CV.Dnn;
+using Emgu.CV.Dnn;
 using Emgu.CV.Structure;
 using Emgu.CV.Util;
 using Emgu.CV;
@@ -12,8 +12,8 @@ internal class Program
         var classLabels = File.ReadAllLines("coco.names");
         net.SetPreferableBackend(Emgu.CV.Dnn.Backend.OpenCV);
         net.SetPreferableTarget(Emgu.CV.Dnn.Target.Cpu);
-        //var vc = new VideoCapture(0, VideoCapture.API.DShow);
-        string videoPath = "test1.avi";
+        //var vc = new VideoCapture(0, VideoCapture.API.DShow); // for webcam
+        string videoPath = "test1.avi"; // for video file
         VideoCapture vc = new VideoCapture(videoPath);
         Mat frame = new();
         VectorOfMat output = new();

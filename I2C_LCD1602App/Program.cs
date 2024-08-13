@@ -12,6 +12,6 @@
     catch (Exception ex)
     {
         Console.WriteLine($"Exception caught in main loop: {ex.Message}");
-        Thread.Sleep(5000); // Czekaj, daj systemowi czas na ustabilizowanie się
+        Thread.Sleep(5000); 
     }
 }

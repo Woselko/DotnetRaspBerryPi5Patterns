@@ -287,6 +287,58 @@
                 ],
                 "debuggerPath": "/home/woselko/vsdbg/vsdbg"
             }
+        },
+                {
+            "preLaunchTask": "VideoObjectDetection_deploy",
+            "name": "VideoObjectDetection Launch (remote)",
+            "type": "coreclr",
+            "request": "launch",
+
+            "program": "/home/woselko/.dotnet/dotnet",
+            "args": [
+                "/home/woselko/VideoObjectDetection/VideoObjectDetection.dll"
+            ],
+
+            "cwd": "/home/woselko/VideoObjectDetection",
+            "console": "integratedTerminal",
+            "externalConsole": false,
+            "internalConsoleOptions": "openOnFirstSessionStart",
+            "stopAtEntry": false,
+
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "ssh",
+                "pipeArgs": [
+                    "woselko@192.168.0.87"
+                ],
+                "debuggerPath": "/home/woselko/vsdbg/vsdbg"
+            }
+        },        
+        {
+            "preLaunchTask": "RfidReaderApp_deploy",
+            "name": "RfidReaderApp Launch (remote)",
+            "type": "coreclr",
+            "request": "launch",
+
+            "program": "/home/woselko/.dotnet/dotnet",
+            "args": [
+                "/home/woselko/RfidReaderApp/RfidReaderApp.dll"
+            ],
+
+            "cwd": "/home/woselko/RfidReaderApp",
+            "console": "integratedTerminal",
+            "externalConsole": false,
+            "internalConsoleOptions": "openOnFirstSessionStart",
+            "stopAtEntry": false,
+
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "ssh",
+                "pipeArgs": [
+                    "woselko@192.168.0.87"
+                ],
+                "debuggerPath": "/home/woselko/vsdbg/vsdbg"
+            }
         }
     ]
 }

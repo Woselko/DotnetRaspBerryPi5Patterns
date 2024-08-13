@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Ustawienia połączenia SPI
+        // Setting up SPI
         var spiSettings = new SpiConnectionSettings(0, 0) // BusId 0, ChipSelect 0
         {
             ClockFrequency = 500000, // 500 KHz
@@ -15,7 +15,7 @@ class Program
 
         using var spiDevice = SpiDevice.Create(spiSettings);
 
-        // Chip Select (CS) na GPIO 5
+        // Chip Select (CS) GPIO 25
         using var gpioController = new GpioController();
         int chipSelectPin = 25;
         gpioController.OpenPin(chipSelectPin, PinMode.Output);
@@ -25,8 +25,8 @@ class Program
         {
             gpioController.Write(chipSelectPin, PinValue.Low);
 
-            // Wysłanie polecenia odczytu dla kanału 0
-            byte[] writeBuffer = new byte[3] { 0x18, 0x00, 0x00 }; // 0x18 = 00011000, które wybiera kanał 0
+            // start bit, single-ended, channel 0
+            byte[] writeBuffer = new byte[3] { 0x18, 0x00, 0x00 }; // 0x18 = 00011000, channel 0
             byte[] readBuffer = new byte[3];
 
             spiDevice.TransferFullDuplex(writeBuffer, readBuffer);
@@ -37,7 +37,7 @@ class Program
             int result = ((readBuffer[1] & 0x0F) << 8) | readBuffer[2];
             Console.WriteLine($"Analogowa wartość z MQ-9: {result}");
 
-            // Czekaj sekundę przed ponownym odczytem
+            // waiting 1 second
             System.Threading.Thread.Sleep(1000);
         }
     }

@@ -286,6 +286,32 @@
             "type": "shell",
             "problemMatcher": [],
             "dependsOn": "VideoObjectDetection_publish"
+        },
+        {
+            "label": "RfidReaderApp_build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/RfidReaderApp/RfidReaderApp.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "RfidReaderApp_publish",
+            "command": "dotnet publish ${workspaceFolder}/RfidReaderApp -r linux-arm64 -o ${workspaceFolder}/RfidReaderApp/bin/arm",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "RfidReaderApp_build"
+        },
+        {
+            "label": "RfidReaderApp_deploy",
+            "command": "scp -r ${workspaceFolder}/RfidReaderApp/bin/arm/* woselko@192.168.0.87:/home/woselko/RfidReaderApp/",
+            "type": "shell",
+            "problemMatcher": [],
+            "dependsOn": "RfidReaderApp_publish"
         }
     ]
 }
