@@ -158,6 +158,26 @@ If you encounter errors, please check the [FAQ section](https://github.com/EdjeE
 ## Examples
 (Still to come!) Please see the [examples](examples) folder for examples of how to use your TFLite model in basic vision applications.
 
+## Stream detection example
+I've created virutal env for python 3.10 via mamba
+1. cd pyproject/tflite1
+```
+cd pyproject/tflite1
+```
+```
+source tflite1-env/bin/activate
+```
+```
+rpicam-vid -t 0 --inline --listen -o tcp://192.168.0.87:9999
+```
+```
+python3 TFLite_detection_stream.py --modeldir=model --stream tcp://192.168.0.87:9999
+```
+Results:
+<p align="center">
+   <img width="500" src="doc/streamDetection.png">
+</p>
+
 ## FAQs
 <details>
 <summary>What's the difference between the TensorFlow Object Detection API and TFLite Model Maker?</summary>
