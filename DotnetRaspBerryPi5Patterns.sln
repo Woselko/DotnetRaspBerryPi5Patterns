@@ -21,11 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaspCameraLibrary", "RaspCa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CameraStreamServer", "CameraStreamServer\CameraStreamServer.csproj", "{8A12F9B2-8D65-4D14-8B60-66144B792DE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQ9GasSensorApp", "MQ9GasSensorApp\MQ9GasSensorApp.csproj", "{573704A4-44B7-45AE-8B2A-A20CF5E250E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQ9GasSensorApp", "MQ9GasSensorApp\MQ9GasSensorApp.csproj", "{573704A4-44B7-45AE-8B2A-A20CF5E250E0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoObjectDetection", "VideoObjectDetection\VideoObjectDetection.csproj", "{DD79134A-81EF-48E0-96A2-ED8CFE217C44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RfidReaderApp", "RfidReaderApp\RfidReaderApp.csproj", "{15E5A133-C6EE-49FF-A094-05065E34133E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RfidReaderApp", "RfidReaderApp\RfidReaderApp.csproj", "{15E5A133-C6EE-49FF-A094-05065E34133E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,5 +84,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0D3C3C1-039B-44C3-9E17-0864336F1C37}
 	EndGlobalSection
 EndGlobal

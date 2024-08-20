@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,21 +7,179 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Emgu.CV" Version="4.9.0.5494" />
-    <PackageReference Include="Emgu.CV.runtime.debian-arm64" Version="4.9.0.5494" />
+      <None Update="BrooklynWillowSt.jpeg">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="GoogleNetCaffe\bvlc_googlenet.caffemodel">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="GoogleNetCaffe\deploy.prototxt">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="MobileNetV3TensorFlow\frozen_inference_graph.pb">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="MobileNetV3TensorFlow\ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="testVideo15fps854p480p.mp4">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="testVideo30fps720p.mp4">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="testVideo15fps720p.mp4">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="testVideo30fps854p480p.mp4">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="YoloNuget\demo_result_yolov10.jpg">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov2tiny\coco.names">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov2tiny\yolov2-tiny.cfg">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov2tiny\yolov2-tiny.weights">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov4\coco.names">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov4tiny\coco.names">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov4tiny\yolov4-tiny.cfg">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov3\coco.names">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="MobileNetSSD_deploy.caffemodel">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="MobileNetV2Caffe\labels.txt">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="MobileNetV2Caffe\mobilenet_v2.caffemodel">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="MobileNetV2Caffe\mobilenet_v2_deploy.prototxt">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="mobileSsdNet\MobileNetSSD_deploy.caffemodel">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="mobileSsdNet\MobileNetSSD_deploy.prototxt.txt">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="mobileSsdNet\mscoco_label_map.pbtxt">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="original.caffemodel">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="MobileNetV3TensorFlow\labelmap.txt">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov3\yolov3.cfg">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov3\yolov3.weights">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov3tiny\coco.names">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov3tiny\yolov3-tiny.cfg">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov3tiny\yolov3-tiny.weights">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov4tiny\yolov4-tiny.weights">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov4\yolov4.cfg">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov4\yolov4.weights">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov7tiny\coco.names">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov7tiny\yolov7-tiny.cfg">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov7tiny\yolov7-tiny.weights">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov7\coco.names">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov7\yolov7.cfg">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov7\yolov7.weights">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov7\yolov7x.weights">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov8_10Onnx\yolov10l.onnx">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov8_10Onnx\yolov10m.onnx">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov8_10Onnx\yolov10n.onnx">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov8_10Onnx\yolov10s.onnx">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="yolov8_10Onnx\yolov8m.onnx">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
   </ItemGroup>
   <ItemGroup>
-      <None Update="coco.names">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="test1.avi">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="yolov3.cfg">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="yolov3.weights">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+    <None Remove="C:\Users\ptfk76\.nuget\packages\emgu.cv.runtime.windows\4.2.0.3636\build\x64\vcruntime140.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="C:\Users\ptfk76\.nuget\packages\emgu.cv.runtime.windows\4.2.0.3636\build\x64\opencv_videoio_ffmpeg420_64.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="C:\Users\ptfk76\.nuget\packages\emgu.cv.runtime.windows\4.2.0.3636\build\x64\msvcp140.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="C:\Users\ptfk76\.nuget\packages\emgu.cv.runtime.windows\4.2.0.3636\build\x64\cvextern.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="C:\Users\ptfk76\.nuget\packages\emgu.cv.runtime.windows\4.2.0.3636\build\x64\concrt140.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="C:\Users\ptfk76\.nuget\packages\emgu.cv.runtime.windows\4.2.0.3636\build\x86\vcruntime140.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="C:\Users\ptfk76\.nuget\packages\emgu.cv.runtime.windows\4.2.0.3636\build\x86\opencv_videoio_ffmpeg420.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="C:\Users\ptfk76\.nuget\packages\emgu.cv.runtime.windows\4.2.0.3636\build\x86\msvcp140.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="C:\Users\ptfk76\.nuget\packages\emgu.cv.runtime.windows\4.2.0.3636\build\x86\cvextern.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="C:\Users\ptfk76\.nuget\packages\emgu.cv.runtime.windows\4.2.0.3636\build\x86\concrt140.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Emgu.CV" Version="4.9.0.5494" />
+    <PackageReference Include="Emgu.CV.runtime.windows" Version="4.9.0.5494" />
+    <PackageReference Include="Emgu.CV.UI" Version="4.9.0.5494" />
+    <PackageReference Include="YoloDotNet" Version="2.0.0" />
   </ItemGroup>
 </Project>
