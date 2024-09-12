@@ -27,10 +27,11 @@ internal class Program
         string currentDirectory = Directory.GetCurrentDirectory();
 
         // Tworzenie obiektu DirectoryInfo
-        DirectoryInfo directoryInfo = new DirectoryInfo(currentDirectory);
+        DirectoryInfo projectDirectory = new DirectoryInfo(currentDirectory);
 
         // Przechodzenie do katalogu nadrzędnego, aż osiągniemy katalog projektu
-        DirectoryInfo projectDirectory = directoryInfo.Parent?.Parent?.Parent;
+        //DirectoryInfo projectDirectory = directoryInfo.Parent?.Parent?.Parent;
+        //string videoPath = Path.Combine(projectDirectory.FullName, "testVideo15fps720p.mp4");
         string videoPath = Path.Combine(projectDirectory.FullName, "testVideo15fps720p.mp4");
 
         //HumanDetectionInVideoMobileNetSSD v2 = new HumanDetectionInVideoMobileNetSSD(projectDirectory + @"\mobileSsdNet\fullfacedetection.caffemodel", projectDirectory + @"\mobileSsdNet\fullface_deploy.prototxt");
@@ -82,77 +83,77 @@ internal class Program
         //YOLOv8 yolo8 = new YOLOv8(projectDirectory + @"\yolov8_10Onnx\yolov8n.onnx");
         //yolo8.DetectObjectsFromWebcamColorCorrection();
 
-        //MeasurePerformance("YOLOv3", () =>
-        //{
-        //    HumanDetectionInVideoYOLO yolo = new HumanDetectionInVideoYOLO(projectDirectory+@"\yolov3\yolov3.cfg", projectDirectory + @"\yolov3\yolov3.weights", projectDirectory + @"\yolov3\coco.names");
+        // MeasurePerformance("YOLOv3", () =>
+        // {
+        //    HumanDetectionInVideoYOLO yolo = new HumanDetectionInVideoYOLO(projectDirectory+@"/yolov3/yolov3.cfg", projectDirectory + @"/yolov3/yolov3.weights", projectDirectory + @"/yolov3/coco.names");
         //    return yolo.DetectObjectsInVideoCommonTest(videoPath, "YOLOV3detected.mp4");
-        //});
+        // });
 
-        //MeasurePerformance("YOLOv4", () =>
-        //{
-        //    HumanDetectionInVideoYOLO yolo = new HumanDetectionInVideoYOLO(projectDirectory + @"\yolov4\yolov4.cfg", projectDirectory + @"\yolov4\yolov4.weights", projectDirectory + @"\yolov4\coco.names");
+        // MeasurePerformance("YOLOv4", () =>
+        // {
+        //    HumanDetectionInVideoYOLO yolo = new HumanDetectionInVideoYOLO(projectDirectory + @"/yolov4/yolov4.cfg", projectDirectory + @"/yolov4/yolov4.weights", projectDirectory + @"/yolov4/coco.names");
         //    return yolo.DetectObjectsInVideoCommonTest(videoPath, "YOLOV4detected.mp4");
-        //});
+        // });
 
-        //MeasurePerformance("YOLOv7", () =>
-        //{
-        //    HumanDetectionInVideoYOLO yolo = new HumanDetectionInVideoYOLO(projectDirectory + @"\yolov7\yolov7.cfg", projectDirectory + @"\yolov7\yolov7.weights", projectDirectory + @"\yolov7\coco.names");
+        // MeasurePerformance("YOLOv7", () =>
+        // {
+        //    HumanDetectionInVideoYOLO yolo = new HumanDetectionInVideoYOLO(projectDirectory + @"/yolov7/yolov7.cfg", projectDirectory + @"/yolov7/yolov7.weights", projectDirectory + @"/yolov7/coco.names");
         //    return yolo.DetectObjectsInVideoCommonTest(videoPath, "YOLOV7detected.mp4");
-        //});
+        // });
 
-        //MeasurePerformance("YOLOv2 Tiny", () =>
-        //{
-        //    HumanDetectionInVideoYOLO yoloTinyV2 = new HumanDetectionInVideoYOLO(projectDirectory + @"\yolov2tiny\yolov2-tiny.cfg", projectDirectory + @"\yolov2tiny\yolov2-tiny.weights", projectDirectory + @"\yolov2tiny\coco.names");
+        // MeasurePerformance("YOLOv2 Tiny", () =>
+        // {
+        //    HumanDetectionInVideoYOLO yoloTinyV2 = new HumanDetectionInVideoYOLO(projectDirectory + @"/yolov2tiny/yolov2-tiny.cfg", projectDirectory + @"/yolov2tiny/yolov2-tiny.weights", projectDirectory + @"/yolov2tiny/coco.names");
         //    return yoloTinyV2.DetectObjectsInVideoCommonTest(videoPath, "YOLOTINYV2detected.mp4");
-        //});
+        // });
 
-        //MeasurePerformance("YOLOv3 Tiny", () =>
-        //{
-        //    HumanDetectionInVideoYOLO yoloTinyV3 = new HumanDetectionInVideoYOLO(projectDirectory + @"\yolov3tiny\yolov3-tiny.cfg", projectDirectory + @"\yolov3tiny\yolov3-tiny.weights", projectDirectory + @"\yolov3tiny\coco.names");
+        // MeasurePerformance("YOLOv3 Tiny", () =>
+        // {
+        //    HumanDetectionInVideoYOLO yoloTinyV3 = new HumanDetectionInVideoYOLO(projectDirectory + @"/yolov3tiny/yolov3-tiny.cfg", projectDirectory + @"/yolov3tiny/yolov3-tiny.weights", projectDirectory + @"/yolov3tiny/coco.names");
         //    return yoloTinyV3.DetectObjectsInVideoCommonTest(videoPath, "YOLOTINYV3detected.mp4");
-        //});
+        // });
 
-        //MeasurePerformance("YOLOv4 Tiny", () =>
-        //{
-        //    HumanDetectionInVideoYOLO yoloTinyV4 = new HumanDetectionInVideoYOLO(projectDirectory + @"\yolov4tiny\yolov4-tiny.cfg", projectDirectory + @"\yolov4tiny\yolov4-tiny.weights", projectDirectory + @"\yolov4tiny\coco.names");
+        // MeasurePerformance("YOLOv4 Tiny", () =>
+        // {
+        //    HumanDetectionInVideoYOLO yoloTinyV4 = new HumanDetectionInVideoYOLO(projectDirectory + @"/yolov4tiny/yolov4-tiny.cfg", projectDirectory + @"/yolov4tiny/yolov4-tiny.weights", projectDirectory + @"/yolov4tiny/coco.names");
         //    return yoloTinyV4.DetectObjectsInVideoCommonTest(videoPath, "YOLOTINYV4detected.mp4");
-        //});
+        // });
 
-        //MeasurePerformance("YOLOv7 Tiny", () =>
-        //{
-        //    HumanDetectionInVideoYOLO yoloTinyV7 = new HumanDetectionInVideoYOLO(projectDirectory + @"\yolov7tiny\yolov7-tiny.cfg", projectDirectory + @"\yolov7tiny\yolov7-tiny.weights", projectDirectory + @"\yolov7tiny\coco.names");
+        // MeasurePerformance("YOLOv7 Tiny", () =>
+        // {
+        //    HumanDetectionInVideoYOLO yoloTinyV7 = new HumanDetectionInVideoYOLO(projectDirectory + @"/yolov7tiny/yolov7-tiny.cfg", projectDirectory + @"/yolov7tiny/yolov7-tiny.weights", projectDirectory + @"/yolov7tiny/coco.names");
         //    return yoloTinyV7.DetectObjectsInVideoCommonTest(videoPath, "YOLOTINYV7detected.mp4");
-        //});
+        // });
 
-        //MeasurePerformance("YOLOv10nano", () =>
-        //{
-        //    YoloDotNetNuget yoloDotNetNuget = new YoloDotNetNuget(projectDirectory + @"\yolov8_10Onnx\yolov10n.onnx");
+        MeasurePerformance("YOLOv10nano", () =>
+        {
+           YoloDotNetNuget yoloDotNetNuget = new YoloDotNetNuget(projectDirectory + @"/yolov8_10Onnx/yolov10n.onnx");
+           return yoloDotNetNuget.DetectObjectsInVideoCommonTest(videoPath, "YOLOV10NanoDetected.mp4");
+        });
+
+        // MeasurePerformance("YOLOv10nano", () =>
+        // {
+        //    YoloDotNetNuget yoloDotNetNuget = new YoloDotNetNuget(projectDirectory + @"/yolov8_10Onnx/yolov10n.onnx");
         //    return yoloDotNetNuget.DetectObjectsInVideoCommonTest(videoPath, "YOLOV10NanoDetected.mp4");
-        //});
+        // });
 
-        //MeasurePerformance("YOLOv8nano", () =>
-        //{
-        //    YOLOv8 yolo8 = new YOLOv8(projectDirectory + @"/yolov8_10Onnx/yolov8n.onnx");
-        //    return yolo8.DetectObjectsInVideoCommonTest(videoPath, "YOLOV8NanoDetected.mp4");
-        //});
-
-        //MeasurePerformance("MobileNetSSD", () =>
-        //{
-        //    HumanDetectionInVideoMobileNetSSD ssd = new HumanDetectionInVideoMobileNetSSD(projectDirectory + @"\mobileSsdNet\MobileNetSSD_deploy.caffemodel", projectDirectory + @"\mobileSsdNet\MobileNetSSD_deploy.prototxt.txt");
+        // MeasurePerformance("MobileNetSSD", () =>
+        // {
+        //    HumanDetectionInVideoMobileNetSSD ssd = new HumanDetectionInVideoMobileNetSSD(projectDirectory + @"/mobileSsdNet/MobileNetSSD_deploy.caffemodel", projectDirectory + @"/mobileSsdNet/MobileNetSSD_deploy.prototxt.txt");
         //    return ssd.DetectObjectsInVideoCommonTest(videoPath, "MOBILESSDNETdetected.mp4");
-        //});
+        // });
 
-        //MeasurePerformance("MobileNetSSDV2", () =>
-        //{
-        //    HumanDetectionInVideoGoogleNetCaffe ssdv2 = new HumanDetectionInVideoGoogleNetCaffe(projectDirectory + @"\MobileNetV2Caffe\mobilenet_v2.caffemodel", projectDirectory + @"\MobileNetV2Caffe\mobilenet_v2_deploy.prototxt", projectDirectory + @"\MobileNetV2Caffe\labels.txt");
+        // MeasurePerformance("MobileNetSSDV2", () =>
+        // {
+        //    HumanDetectionInVideoGoogleNetCaffe ssdv2 = new HumanDetectionInVideoGoogleNetCaffe(projectDirectory + @"/MobileNetV2Caffe/mobilenet_v2.caffemodel", projectDirectory + @"/MobileNetV2Caffe/mobilenet_v2_deploy.prototxt", projectDirectory + @"/MobileNetV2Caffe/labels.txt");
         //    return ssdv2.DetectObjectsInVideoCommonTest(videoPath, "MOBILENETV2detected.mp4");
-        //});
+        // });
 
-        //MeasurePerformance("MobileNetV3 TensorFlow", () =>
-        //{
-        //    var V3TensorFlow = new HumanDetectionInVideoTensorFlow(projectDirectory + @"\MobileNetV3TensorFlow\frozen_inference_graph.pb", projectDirectory + @"\MobileNetV3TensorFlow\ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt", projectDirectory + @"\MobileNetV3TensorFlow\labelmap.txt");
+        // MeasurePerformance("MobileNetV3 TensorFlow", () =>
+        // {
+        //    var V3TensorFlow = new HumanDetectionInVideoTensorFlow(projectDirectory + @"/MobileNetV3TensorFlow/frozen_inference_graph.pb", projectDirectory + @"/MobileNetV3TensorFlow/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt", projectDirectory + @"/MobileNetV3TensorFlow/labelmap.txt");
         //    return V3TensorFlow.DetectObjectsInVideoCommonTest(videoPath, "MOBILENETV3detected.mp4");
-        //});
+        // });
     }
 
     static void MeasurePerformance(string methodName, Func<(int, int)> detectionMethod)

@@ -178,7 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Emgu.CV" Version="4.9.0.5494" />
-    <PackageReference Include="Emgu.CV.runtime.windows" Version="4.9.0.5494" />
+    <PackageReference Include="Emgu.CV.runtime.debian-arm64" Version="4.9.0.5494" />
     <PackageReference Include="Emgu.CV.UI" Version="4.9.0.5494" />
     <PackageReference Include="Jellyfin.SkiaSharp.NativeAssets.LinuxArm" Version="1.68.1" />
     <PackageReference Include="NtvLibs.OnnxRuntime.CPU.onnxruntime.runtime.linux-arm64" Version="1.15.1" />
