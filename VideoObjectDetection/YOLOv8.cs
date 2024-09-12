@@ -68,7 +68,12 @@ namespace VideoObjectDetection
                     // Tworzenie czcionki
                     var font = SystemFonts.CreateFont("Consolas", 11);
                     var textSize = TextMeasurer.MeasureSize(text, new TextOptions(font));
-
+                    if (pred.Label.Name == "person")
+                    {
+                        totalPersonFrames++;
+                        if (personDetectedFrame == -1)
+                            personDetectedFrame = frameCounter;
+                    }
                     // Definiowanie pióra i pędzla
                     var pen = Pens.Solid(SixLabors.ImageSharp.Color.Yellow, 2.0f);
                     var colorBrush = Brushes.Solid(SixLabors.ImageSharp.Color.Yellow);

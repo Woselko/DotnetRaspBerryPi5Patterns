@@ -99,14 +99,25 @@ public class HumanDetectionInVideoYOLO
 
     public void DetectObjectsInVideo(string videoPath, string outputPath)
     {
+
+        Emgu.CV.Backend[] backends = CvInvoke.WriterBackends;
+        int backend_idx = 0; //any backend;
+        foreach (Emgu.CV.Backend be in backends)
+        {
+            if (be.Name.Equals("MSMF"))
+            {
+                backend_idx = be.ID;
+                break;
+            }
+        }
         var net = DnnInvoke.ReadNetFromDarknet(_yoloConfigPath, _yoloWeightsPath);
         net.SetPreferableBackend(Emgu.CV.Dnn.Backend.OpenCV);
         net.SetPreferableTarget(Emgu.CV.Dnn.Target.Cpu);
 
         var classLabels = File.ReadAllLines(_cocoNamesPath);
-
+        int fourcc = VideoWriter.Fourcc('H', '2', '6', '4');
         using var videoCapture = new VideoCapture(videoPath);
-        using var writer = new VideoWriter(outputPath, VideoWriter.Fourcc('m', 'p', '4', 'v'), 30, new Size(videoCapture.Width, videoCapture.Height), true);
+        using var writer = new VideoWriter(outputPath, fourcc/*VideoWriter.Fourcc('m', 'p', '4', 'v')*/, 30, new Size(videoCapture.Width, videoCapture.Height), true);
 
         Mat frame = new Mat();
         while (videoCapture.Read(frame))
@@ -168,7 +179,7 @@ public class HumanDetectionInVideoYOLO
         //yolov3.weights need to be downloaded from https://pjreddie.com/darknet/yolo/ its >200mb
         var net = DnnInvoke.ReadNetFromDarknet(_yoloConfigPath, _yoloWeightsPath);
         net.SetPreferableBackend(Emgu.CV.Dnn.Backend.OpenCV);
-        net.SetPreferableTarget(Emgu.CV.Dnn.Target.Cpu);
+        net.SetPreferableTarget(Emgu.CV.Dnn.Target.CpuFp16);
         var classLabels = File.ReadAllLines(_cocoNamesPath);
         var vc = new VideoCapture(0, VideoCapture.API.DShow); // for webcam
 
@@ -213,7 +224,7 @@ public class HumanDetectionInVideoYOLO
                     }
                 }
             }
-            var bestIndex = DnnInvoke.NMSBoxes(boxes.ToArray(), scores.ToArray(), .8f, .3f);
+            var bestIndex = DnnInvoke.NMSBoxes(boxes.ToArray(), scores.ToArray(), .9f, .1f);
             var frameOut = frame.ToImage<Bgr, byte>();
             for (int i = 0; i < bestIndex.Length; i++)
             {

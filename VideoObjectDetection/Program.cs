@@ -33,6 +33,12 @@ internal class Program
         DirectoryInfo projectDirectory = directoryInfo.Parent?.Parent?.Parent;
         string videoPath = Path.Combine(projectDirectory.FullName, "testVideo15fps720p.mp4");
 
+        //HumanDetectionInVideoMobileNetSSD v2 = new HumanDetectionInVideoMobileNetSSD(projectDirectory + @"\mobileSsdNet\fullfacedetection.caffemodel", projectDirectory + @"\mobileSsdNet\fullface_deploy.prototxt");
+        //v2.DetectInWebCamera();
+
+        //HumanDetectionInVideoYOLO yolo = new HumanDetectionInVideoYOLO(projectDirectory + @"\yolov8_10Onnx\csdarknet53-omega.cfg", projectDirectory + @"\yolov8_10Onnx\csdarknet53-omega_final.weights", projectDirectory + @"\yolov3\coco.names");
+        //yolo.DetectInWebCamera();
+
         //HumanDetectionInVideoYOLO yolo = new HumanDetectionInVideoYOLO(projectDirectory + @"\yolov3\yolov3.cfg", projectDirectory + @"\yolov3\yolov3.weights", projectDirectory + @"\yolov3\coco.names");
         //yolo.DetectObjectsInVideo(videoPath, "YOLOdetected.mp4");
         //yolo.DetectInWebCamera();
@@ -57,8 +63,8 @@ internal class Program
         //yoloTinyV4.DetectObjectsInVideo(videoPath, "YOLOTINYV4detected.mp4");
         //yoloTinyV4.DetectInWebCamera();
 
-        //HumanDetectionInVideoYOLO yoloTinyV7 = new HumanDetectionInVideoYOLO(projectDirectory + @"\yolov7tiny\yolov7-tiny.cfg", projectDirectory + @"\yolov7tiny\yolov7-tiny.weights", projectDirectory + @"\yolov7tiny\coco.names");
-        //yoloTinyV7.DetectObjectsInVideo(videoPath, "YOLOTINYV7detected.mp4");
+        HumanDetectionInVideoYOLO yoloTinyV7 = new HumanDetectionInVideoYOLO(projectDirectory + @"\yolov7tiny\yolov7-tiny.cfg", projectDirectory + @"\yolov7tiny\yolov7-tiny.weights", projectDirectory + @"\yolov7tiny\coco.names");
+        yoloTinyV7.DetectObjectsInVideo(videoPath, "YOLOTINYV7detected.mp4");
         //yoloTinyV7.DetectInWebCamera();
 
         //HumanDetectionInVideoMobileNetSSD ssd = new HumanDetectionInVideoMobileNetSSD(projectDirectory + @"\mobileSsdNet\MobileNetSSD_deploy.caffemodel", projectDirectory + @"\mobileSsdNet\MobileNetSSD_deploy.prototxt.txt");
@@ -73,9 +79,8 @@ internal class Program
         //V3TensorFlow.DetectObjectsInVideo(videoPath, "MOBILENETV3detected.mp4");
         //V3TensorFlow.DetectObjectsFromWebcam();
 
-
-
-
+        //YOLOv8 yolo8 = new YOLOv8(projectDirectory + @"\yolov8_10Onnx\yolov8n.onnx");
+        //yolo8.DetectObjectsFromWebcamColorCorrection();
 
         //MeasurePerformance("YOLOv3", () =>
         //{
@@ -125,10 +130,10 @@ internal class Program
         //    return yoloDotNetNuget.DetectObjectsInVideoCommonTest(videoPath, "YOLOV10NanoDetected.mp4");
         //});
 
-        //MeasurePerformance("YOLOv10nano", () =>
+        //MeasurePerformance("YOLOv8nano", () =>
         //{
-        //    YoloDotNetNuget yoloDotNetNuget = new YoloDotNetNuget(projectDirectory + @"\yolov8_10Onnx\yolov10n.onnx");
-        //    return yoloDotNetNuget.DetectObjectsInVideoCommonTest(videoPath, "YOLOV10NanoDetected.mp4");
+        //    YOLOv8 yolo8 = new YOLOv8(projectDirectory + @"/yolov8_10Onnx/yolov8n.onnx");
+        //    return yolo8.DetectObjectsInVideoCommonTest(videoPath, "YOLOV8NanoDetected.mp4");
         //});
 
         //MeasurePerformance("MobileNetSSD", () =>
