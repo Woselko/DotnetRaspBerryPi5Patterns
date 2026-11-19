@@ -32,7 +32,7 @@ DHT11 and DHT22 is same electronic schema, but code is different, DHT22 is more 
 ![image](https://github.com/user-attachments/assets/c1a9ad40-1248-4e4f-905e-09f11c72bf92)
 
 ## RaspCameraLibrary
-C# libcamera wrapper for streaming video
+C# rpicam wrapper for streaming video (`rpicam-hello`, `rpicam-vid`, `rpicam-still`). NuGet: GitHub Packages `RaspCameraLibrary` 1.1.0 (high-level capture, diagnostics, MJPEG, multi-camera, DI).
 ![image](https://github.com/Woselko/DotnetRaspBerryPi5Patterns/assets/76818798/b1ac49b8-3bea-42a5-a59f-94d75ba2cc0f)
 
 ## CameraStreamServer

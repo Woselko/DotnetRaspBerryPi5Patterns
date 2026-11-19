@@ -1,5 +1,6 @@
-﻿using RaspCameraLibrary.Helpers;
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using RaspCameraLibrary.Helpers;
+using RaspCameraLibrary.Resolution;
 
 namespace RaspCameraLibrary;
 
@@ -9,9 +10,14 @@ namespace RaspCameraLibrary;
 public abstract class RaspCamera
 {
     /// <summary>
-    /// Binary name
+    /// Camera CLI tool kind.
     /// </summary>
-    protected abstract string Executable { get; }
+    protected abstract CameraTool Tool { get; }
+
+    /// <summary>
+    /// Resolved binary name (rpicam-* with libcamera-* fallback).
+    /// </summary>
+    protected virtual string Executable => CameraBinaryResolver.Resolve(Tool);
 
     /// <summary>
     /// Generate start info from string arguments
@@ -23,12 +29,13 @@ public abstract class RaspCamera
         RedirectStandardInput = true,
         RedirectStandardError = true,
         RedirectStandardOutput = true,
-        UseShellExecute = false
+        UseShellExecute = false,
+        CreateNoWindow = true
     };
 
     /// <summary>
     /// Generate start info from arguments
-    /// </summary>x
+    /// </summary>
     protected ProcessStartInfo StartInfo(Arguments arguments) => new()
     {
         FileName = Executable,
@@ -36,6 +43,7 @@ public abstract class RaspCamera
         RedirectStandardInput = true,
         RedirectStandardError = true,
         RedirectStandardOutput = true,
-        UseShellExecute = false
+        UseShellExecute = false,
+        CreateNoWindow = true
     };
 }

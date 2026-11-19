@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace RaspCameraLibrary.Settings;
 
 /// <summary>
-/// Parameters for libcamera-still
+/// Parameters for rpicam-still
 /// </summary>
 [JsonConverter(typeof(StillSettingsConverter<StillSettings>))]
 public class StillSettings : Arguments
@@ -351,7 +351,7 @@ public class StillSettings : Arguments
     public uint? ViewfinderHeight { get; set; } = null;
 
     /// <summary>
-    /// Name of camera tuning file to use, omit this option for libcamera default behaviour
+    /// Name of camera tuning file to use, omit this option for rpicam default behaviour
     /// </summary>
     [Argument("--tuning-file")]
     public string? TuningFile { get; set; } = null;

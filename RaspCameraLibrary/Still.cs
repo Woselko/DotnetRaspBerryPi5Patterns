@@ -1,23 +1,23 @@
+using System.Diagnostics;
 using RaspCameraLibrary.Settings;
 using RaspCameraLibrary.Settings.Types;
-using System.Diagnostics;
 
 namespace RaspCameraLibrary;
 
 /// <summary>
-/// libcamera-still Wrapper
+/// rpicam-still Wrapper
 /// </summary>
 public class Still : Hello
 {
     /// <summary>
-    /// Binary name
+    /// Camera CLI tool
     /// </summary>
-    protected override string Executable => "libcamera-still";
+    protected override CameraTool Tool => CameraTool.Still;
 
     private static Still Instance { get; } = new Still();
 
     /// <summary>
-    /// Generate a ProcessStartInfo for libcamera-still
+    /// Generate a ProcessStartInfo for rpicam-still
     /// </summary>
     public static ProcessStartInfo CaptureStartInfo(StillSettings settings) => Instance.StartInfo(settings);
 

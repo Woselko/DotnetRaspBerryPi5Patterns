@@ -1,23 +1,23 @@
+using System.Diagnostics;
 using RaspCameraLibrary.Settings;
 using RaspCameraLibrary.Settings.Types;
-using System.Diagnostics;
 
 namespace RaspCameraLibrary;
 
 /// <summary>
-/// libcamera-vid Wrapper
+/// rpicam-vid Wrapper
 /// </summary>
 public class Video : Hello
 {
     /// <summary>
-    /// Binary name
+    /// Camera CLI tool
     /// </summary>
-    protected override string Executable => "libcamera-vid";
+    protected override CameraTool Tool => CameraTool.Vid;
 
     private static Video Instance { get; } = new Video();
 
     /// <summary>
-    /// Generate a ProcessStartInfo for libcamera-vid
+    /// Generate a ProcessStartInfo for rpicam-vid
     /// </summary>
     public static ProcessStartInfo CaptureStartInfo(VideoSettings settings) => Instance.StartInfo(settings);
 

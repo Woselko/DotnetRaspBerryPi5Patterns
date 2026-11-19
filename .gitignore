@@ -12,6 +12,9 @@
 *.assets.json
 *.csproj.FileListAbsolute.txt
 *.csproj.nuget.dgspec.json
+nupkg/
+*.nupkg
+*.snupkg
 
 
 # Build results

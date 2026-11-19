@@ -5,25 +5,25 @@ using System.Diagnostics;
 namespace RaspCameraLibrary;
 
 /// <summary>
-/// libcamera-vid Wrapper
+/// rpicam-vid Wrapper
 /// </summary>
 public class VideoStream : Hello
 {
     /// <summary>
-    /// Binary name
+    /// Camera CLI tool
     /// </summary>
-    protected override string Executable => "libcamera-vid";
+    protected override CameraTool Tool => CameraTool.Vid;
 
 
     /// <summary>
     /// New frame received event
     /// </summary>
-    public event Action<byte[]> NewImageReceived;
+    public event Action<byte[]>? NewImageReceived;
 
     /// <summary>
     /// New Video info received event
     /// </summary>
-    public event Action<string> VideoInfoReceived;
+    public event Action<string>? VideoInfoReceived;
 
     /// <summary>
     /// New VideoStream instance
@@ -31,7 +31,7 @@ public class VideoStream : Hello
     private static VideoStream Instance { get; } = new VideoStream();
 
     /// <summary>
-    /// Generate a ProcessStartInfo for libcamera-vid
+    /// Generate a ProcessStartInfo for rpicam-vid
     /// </summary>
     public static ProcessStartInfo CaptureStartInfo(VideoSettings settings) => Instance.StartInfo(settings);
 
@@ -41,9 +41,9 @@ public class VideoStream : Hello
     public static new async Task<List<Camera>?> ListCameras() => await Instance.List();
 
     /// <summary>
-    /// Actual process running libcamera-vid
+    /// Actual process running rpicam-vid
     /// </summary>
-    public static Process CaptureStreamProcess { get; set; }
+    public static Process? CaptureStreamProcess { get; set; }
 
     /// <summary>
     /// Start Frame reader
@@ -59,26 +59,27 @@ public class VideoStream : Hello
         var args = processStartInfo.Arguments;
         args += " --libav-format mjpeg";
         processStartInfo.Arguments = args;
-        CaptureStreamProcess = new Process
+        var process = new Process
         {
             StartInfo = processStartInfo,
         };
-        CaptureStreamProcess.ErrorDataReceived += ProcessDataReceived;
-        CaptureStreamProcess.Start();
-        CaptureStreamProcess.BeginErrorReadLine();
+        CaptureStreamProcess = process;
+        process.ErrorDataReceived += ProcessDataReceived;
+        process.Start();
+        process.BeginErrorReadLine();
 
-        using (var frameOutputStream = CaptureStreamProcess.StandardOutput.BaseStream)
+        using (var frameOutputStream = process.StandardOutput.BaseStream)
         {
             var buffer = new byte[65536];
             var imageData = new List<byte>();
 
             while (!cancellationToken.IsCancellationRequested)
             {
-                if(CaptureStreamProcess.HasExited)
+                if (process.HasExited)
                 {
                     break;
                 }
-                
+
                 var length = await frameOutputStream.ReadAsync(buffer, 0, buffer.Length);
 
                 if (length == 0)
@@ -90,18 +91,17 @@ public class VideoStream : Hello
                 if (imageData.Count > 0)
                 {
                     SendExtractedJPEGFrames(imageData.ToArray());
-                   //this.NewImageReceived?.Invoke(imageData.ToArray());
-                   imageData.Clear();
+                    imageData.Clear();
                 }
             }
 
             frameOutputStream.Close();
         }
-        CaptureStreamProcess.ErrorDataReceived -= this.ProcessDataReceived;
-        CaptureStreamProcess.WaitForExit(1000);
-        if (!CaptureStreamProcess.HasExited)
+        process.ErrorDataReceived -= ProcessDataReceived;
+        process.WaitForExit(1000);
+        if (!process.HasExited)
         {
-            CaptureStreamProcess.Kill();
+            process.Kill();
         }
     }
 

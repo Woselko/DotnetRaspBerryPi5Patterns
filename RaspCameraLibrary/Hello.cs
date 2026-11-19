@@ -1,18 +1,18 @@
-using RaspCameraLibrary.Settings.Types;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using RaspCameraLibrary.Settings.Types;
 
 namespace RaspCameraLibrary;
 
 /// <summary>
-/// libcamera-hello Wrapper
+/// rpicam-hello Wrapper
 /// </summary>
 public partial class Hello : RaspCamera
 {
     /// <summary>
-    /// Binary name
+    /// Camera CLI tool
     /// </summary>
-    protected override string Executable => "libcamera-hello";
+    protected override CameraTool Tool => CameraTool.Hello;
 
     private const string ListCamerasCommand = "--list-cameras";
 
@@ -24,6 +24,12 @@ public partial class Hello : RaspCamera
 
     [GeneratedRegex(@"(\d+)x(\d+) \[(.+) fps - \((\d+), (\d+)\)\/(\d+)x(\d+) crop\]", RegexOptions.IgnoreCase)]
     private static partial Regex ResolutionRegex();
+
+    /// <summary>
+    /// Build start info for a timed preview: rpicam-hello --camera {id} -t {timeoutMs}
+    /// </summary>
+    public static ProcessStartInfo PreviewStartInfo(uint cameraId = 0, uint timeoutMs = 5000)
+        => Instance.StartInfo($"--camera {cameraId} -t {timeoutMs}");
 
     /// <summary>
     /// List cameras
